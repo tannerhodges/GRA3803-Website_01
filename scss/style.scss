@@ -1,0 +1,65 @@
+/* ====================================================================
+	COLOR SCHEMES
+   ==================================================================== */
+
+/* Colors */
+$primary: #f00;
+
+/* Dimensions */
+$full: 960px;
+$header-h: 100px;
+
+/* Mixins */
+@mixin shadow {
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .5);
+}
+
+
+/* ====================================================================
+	BASIC LAYOUT
+   ==================================================================== */
+
+/* Setup height to always reach at least 100% of the page - in case we don't have much content, you know... */
+html, body { min-height: 100%; }
+
+body {
+	font: 16px/22px Arial, sans-serif;
+	background-color: $primary;
+}
+
+.clearfix { clear: both; }
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $header-h;
+	line-height: $header-h;
+	background-color: complement($primary);
+}
+#header-margin { height: $header-h; }
+
+/* Container & Wrap */
+#container {
+	width: 100%;
+	min-height: 100%;
+	margin: auto;
+	.wrap {
+		padding: 1em;
+	}
+}
+.wrap {
+	width: $full;
+	height: 100%;
+	margin: auto;
+}
+
+
+/* ====================================================================
+	GENERAL STYLES
+   ==================================================================== */
+
+
