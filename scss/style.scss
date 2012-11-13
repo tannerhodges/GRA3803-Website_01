@@ -1,13 +1,85 @@
 /* ====================================================================
+	INIT
+   ==================================================================== */
+
+@import url("reset.css");
+
+
+/* ====================================================================
+	FONTS -- http://awesome-fontstacks.com/bundles/339-awesome-bundle-339
+   ==================================================================== */
+
+/* Museo Sans */
+@font-face {
+    font-family: '_.regular';
+    src: url('./fonts/./fonts/museosans_500-webfont-webfont.eot');
+    src: url('./fonts/./fonts/museosans_500-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/./fonts/museosans_500-webfont-webfont.woff') format('woff'),
+         url('./fonts/./fonts/museosans_500-webfont-webfont.ttf') format('truetype'),
+         url('./fonts/./fonts/museosans_500-webfont-webfont.svg#_.regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Gentium Basic */
+@font-face {
+    font-family: 'gentium_book_basicregular';
+    src: url('./fonts/genbkbasr-webfont.eot');
+    src: url('./fonts/genbkbasr-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/genbkbasr-webfont.woff') format('woff'),
+         url('./fonts/genbkbasr-webfont.ttf') format('truetype'),
+         url('./fonts/genbkbasr-webfont.svg#gentium_book_basicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Liberation Serif */
+@font-face {
+    font-family: 'liberation_serifregular';
+    src: url('./fonts/liberationserif-regular-webfont.eot');
+    src: url('./fonts/liberationserif-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/liberationserif-regular-webfont.woff') format('woff'),
+         url('./fonts/liberationserif-regular-webfont.ttf') format('truetype'),
+         url('./fonts/liberationserif-regular-webfont.svg#liberation_serifregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Liberation Mono */
+@font-face {
+    font-family: 'liberation_monoregular';
+    src: url('./fonts/liberationmono-regular-webfont.eot');
+    src: url('./fonts/liberationmono-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/liberationmono-regular-webfont.woff') format('woff'),
+         url('./fonts/liberationmono-regular-webfont.ttf') format('truetype'),
+         url('./fonts/liberationmono-regular-webfont.svg#liberation_monoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@mixin font-headline { font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;}
+@mixin font-text { font-family: "gentium_book_basicregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif; font-size: 1.115em;}
+@mixin font-decoration { font-family: "liberation_serifregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif; font-size: 1.102em;}
+@mixin font-mono { font-family: "liberation_monoregular", Menlo, Courier New, Courier, Mono, monospace; font-size: 0.958em;}
+
+
+/* ====================================================================
 	COLOR SCHEMES
    ==================================================================== */
 
 /* Colors */
-$primary: #f00;
+$c1: #273237; 		/* Gray blue */
+$c2: #1038BF;		/* Rich blue */
+$c3: #52A05F;		/* Light green */
+$c4: #286C35;		/* Dark green */
+$c5: #BFC2B3;		/* Tan */
+
+$primary: $c2;
 
 /* Dimensions */
 $full: 960px;
 $header-h: 100px;
+$pad: 16px;
 
 /* Mixins */
 @mixin shadow {
@@ -26,10 +98,26 @@ html, body { min-height: 100%; }
 
 body {
 	font: 16px/22px Arial, sans-serif;
-	background-color: $primary;
 }
 
 .clearfix { clear: both; }
+
+/* Wrap */
+.wrap {
+	width: $full;
+	padding: $pad;
+	height: 100%;
+	margin: auto;
+	.column {
+		float: left;
+		&.left {
+			width: $full * (3/4);
+		}
+		&.right {
+			width: $full * (1/4);
+		}
+	}
+}
 
 header {
 	position: fixed;
@@ -37,24 +125,28 @@ header {
 	left: 0;
 	width: 100%;
 	height: $header-h;
-	line-height: $header-h;
-	background-color: complement($primary);
-}
-#header-margin { height: $header-h; }
-
-/* Container & Wrap */
-#container {
-	width: 100%;
-	min-height: 100%;
-	margin: auto;
-	.wrap {
-		padding: 1em;
+	h1 {
 	}
 }
-.wrap {
-	width: $full;
-	height: 100%;
-	margin: auto;
+#content { 
+	padding-top: $header-h + $pad;
+}
+
+/* Nav */
+#main-nav {
+	ul {
+		li {
+			float: left; 
+			padding: 1em;
+			&:first-child {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+#footer {
+	min-height: 300px;
 }
 
 
@@ -62,4 +154,23 @@ header {
 	GENERAL STYLES
    ==================================================================== */
 
+body {
+	background: $primary url('../img/creampaper.png');
+}
 
+header {
+	background-color: $primary;
+	border-bottom: 3px solid darken($primary, 20);
+	h1 {
+		@include font-headline;
+	}
+}
+
+#content {
+	background-color: $c1;
+	@include shadow;
+}
+
+#footer {
+	background-color: $c4;
+}
