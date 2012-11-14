@@ -10,6 +10,7 @@
 /* Light green */
 /* Dark green */
 /* Tan */
+/* darken($c3,50) */
 /* Golden ratio */
 /* Dimensions */
 /* Golden ratios */
@@ -57,40 +58,52 @@
 	BASIC LAYOUT
    ==================================================================== */
 /* Setup height to always reach at least 100% of the page - in case we don't have much content, you know... */
-/* line 120, ../scss/style.scss */
+/* line 122, ../scss/style.scss */
 html, body {
   min-height: 100%;
 }
 
-/* line 125, ../scss/style.scss */
+/* line 124, ../scss/style.scss */
 .clearfix {
   clear: both;
 }
 
+/* Background column - fills with color (or whatever) */
+/* line 127, ../scss/style.scss */
+#bg-column {
+  width: 1040px;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  margin-left: -520px;
+  margin-top: 0;
+}
+
 /* Wrap */
-/* line 128, ../scss/style.scss */
+/* line 138, ../scss/style.scss */
 .wrap {
   width: 1000px;
   height: 100%;
   margin: auto;
   /* Columns */
 }
-/* line 134, ../scss/style.scss */
+/* line 144, ../scss/style.scss */
 .wrap .column {
   float: left;
   padding: 20px;
   /* Sides */
 }
-/* line 139, ../scss/style.scss */
+/* line 149, ../scss/style.scss */
 .wrap .column.left {
   width: 578.03399px;
 }
-/* line 140, ../scss/style.scss */
+/* line 150, ../scss/style.scss */
 .wrap .column.right {
   width: 341.96601px;
 }
 
-/* line 144, ../scss/style.scss */
+/* Header */
+/* line 155, ../scss/style.scss */
 header {
   position: fixed;
   top: 0;
@@ -99,60 +112,88 @@ header {
   height: 55.72809px;
   line-height: 55.72809px;
 }
-/* line 152, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 header h1 {
   float: left;
   margin-left: 20px;
 }
 
-/* line 158, ../scss/style.scss */
+/* Content */
+/* line 170, ../scss/style.scss */
 #content {
-  padding-top: 55.72809px;
+  position: relative;
   min-height: 544.27191px;
+  padding-top: 55.72809px;
 }
 
 /* Nav */
-/* line 165, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 #main-nav li {
   float: left;
 }
-/* line 167, ../scss/style.scss */
+/* line 180, ../scss/style.scss */
 #main-nav li:first-child {
   padding-left: 0;
 }
 
-/* line 173, ../scss/style.scss */
-#footer {
+/* Footer */
+/* line 187, ../scss/style.scss */
+footer {
+  position: relative;
+  width: 100%;
   min-height: 300px;
 }
 
 /* ====================================================================
 	GENERAL STYLES
    ==================================================================== */
-/* line 182, ../scss/style.scss */
+/* line 198, ../scss/style.scss */
 body {
   background: #1038bf url("../img/creampaper.png");
   font-family: "gentium_book_basicregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif;
   font-size: 1.115em;
   font-size: 16px;
   line-height: 22px;
+  color: #333;
 }
 
-/* line 190, ../scss/style.scss */
+/* line 207, ../scss/style.scss */
 a:link, a:active, a:visited {
   color: #1038bf;
 }
-/* line 191, ../scss/style.scss */
+/* line 208, ../scss/style.scss */
 a:hover {
   color: #466cef;
 }
 
-/* line 194, ../scss/style.scss */
+/* line 211, ../scss/style.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
 }
 
-/* line 196, ../scss/style.scss */
+/* Background column colors and such */
+/* line 214, ../scss/style.scss */
+#bg-column {
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  -webkit-box-shadow: 0 0 20px 1px rgba(136, 136, 136, 0.3);
+  -moz-box-shadow: 0 0 20px 1px rgba(136, 136, 136, 0.3);
+  box-shadow: 0 0 20px 1px rgba(136, 136, 136, 0.3);
+  z-index: 0;
+}
+
+/* line 221, ../scss/style.scss */
+#content, footer {
+  z-index: 10;
+}
+
+/* line 222, ../scss/style.scss */
+header {
+  z-index: 20;
+}
+
+/* line 224, ../scss/style.scss */
 header {
   background-color: rgba(16, 56, 191, 0.95);
   border-bottom: 3px solid #081c61;
@@ -160,9 +201,10 @@ header {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+  /*	@include gradient(rgba(lighten($secondary, 10),0.5), rgba($secondary,0.95)); */
   /* Header Link */
 }
-/* line 207, ../scss/style.scss */
+/* line 237, ../scss/style.scss */
 header h1 a {
   margin-right: 20px;
   font-family: "liberation_serifregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif;
@@ -172,13 +214,13 @@ header h1 a {
   text-shadow: 0 2px 2px rgba(8, 28, 97, 0.3), 0 1px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }
-/* line 217, ../scss/style.scss */
+/* line 247, ../scss/style.scss */
 header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   color: #fff;
 }
 
 /* Main navigation items */
-/* line 223, ../scss/style.scss */
+/* line 253, ../scss/style.scss */
 #main-nav li a {
   position: relative;
   top: 1px;
@@ -189,26 +231,16 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   text-transform: lowercase;
   text-decoration: none;
 }
-/* line 234, ../scss/style.scss */
+/* line 264, ../scss/style.scss */
 #main-nav li a:link, #main-nav li a:active, #main-nav li a:visited {
   color: #bfc2b3;
 }
-/* line 235, ../scss/style.scss */
+/* line 265, ../scss/style.scss */
 #main-nav li a:hover {
   color: #efefec;
 }
 
-/* line 241, ../scss/style.scss */
-#content {
-  background-color: #fff;
-  color: #333;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  -webkit-box-shadow: 0 0 20px 1px rgba(136, 136, 136, 0.3);
-  -moz-box-shadow: 0 0 20px 1px rgba(136, 136, 136, 0.3);
-  box-shadow: 0 0 20px 1px rgba(136, 136, 136, 0.3);
-}
-/* line 248, ../scss/style.scss */
+/* line 272, ../scss/style.scss */
 #content h2 {
   font-weight: bold;
   font-size: 1.75em;
@@ -217,16 +249,16 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   margin-bottom: 0.5em;
 }
 
-/* line 257, ../scss/style.scss */
-#footer {
-  border-top: 1px solid #286c35;
+/* line 281, ../scss/style.scss */
+footer {
+  border-top: 1px solid #52a05f;
   *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#80369147', endColorstr='#F2286C35');
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(54, 145, 71, 0.5)), color-stop(100%, rgba(40, 108, 53, 0.95)));
-  background-image: -webkit-linear-gradient(top, rgba(54, 145, 71, 0.5) 0%, rgba(40, 108, 53, 0.95) 100%);
-  background-image: -moz-linear-gradient(top, rgba(54, 145, 71, 0.5) 0%, rgba(40, 108, 53, 0.95) 100%);
-  background-image: -o-linear-gradient(top, rgba(54, 145, 71, 0.5) 0%, rgba(40, 108, 53, 0.95) 100%);
-  background-image: linear-gradient(top, rgba(54, 145, 71, 0.5) 0%, rgba(40, 108, 53, 0.95) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#8070B57B', endColorstr='#F252A05F');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(112, 181, 123, 0.5)), color-stop(100%, rgba(82, 160, 95, 0.95)));
+  background-image: -webkit-linear-gradient(top, rgba(112, 181, 123, 0.5) 0%, rgba(82, 160, 95, 0.95) 100%);
+  background-image: -moz-linear-gradient(top, rgba(112, 181, 123, 0.5) 0%, rgba(82, 160, 95, 0.95) 100%);
+  background-image: -o-linear-gradient(top, rgba(112, 181, 123, 0.5) 0%, rgba(82, 160, 95, 0.95) 100%);
+  background-image: linear-gradient(top, rgba(112, 181, 123, 0.5) 0%, rgba(82, 160, 95, 0.95) 100%);
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
@@ -234,7 +266,7 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
 
 /* Found this form at http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html */
 /* ----------- My Form ----------- */
-/* line 270, ../scss/style.scss */
+/* line 294, ../scss/style.scss */
 .myform {
   margin: 10px 0;
   padding: 14px;
@@ -242,7 +274,7 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   font-size: 12px;
   line-height: 14px;
 }
-/* line 280, ../scss/style.scss */
+/* line 304, ../scss/style.scss */
 .myform p, .myform h1, .myform form, .myform button {
   border: 0;
   margin: 0;
@@ -250,18 +282,18 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
 }
 
 /* ----------- stylized ----------- */
-/* line 285, ../scss/style.scss */
+/* line 309, ../scss/style.scss */
 #stylized {
   border: solid 2px #b7ddf2;
   background: #ebf4fb;
 }
-/* line 289, ../scss/style.scss */
+/* line 313, ../scss/style.scss */
 #stylized h3 {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 8px;
 }
-/* line 294, ../scss/style.scss */
+/* line 318, ../scss/style.scss */
 #stylized p {
   font-size: 11px;
   color: #666666;
@@ -269,7 +301,7 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   border-bottom: solid 1px #b7ddf2;
   padding-bottom: 10px;
 }
-/* line 301, ../scss/style.scss */
+/* line 325, ../scss/style.scss */
 #stylized label {
   display: block;
   clear: both;
@@ -279,7 +311,7 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   width: 140px;
   line-height: 25px;
 }
-/* line 310, ../scss/style.scss */
+/* line 334, ../scss/style.scss */
 #stylized input {
   float: left;
   margin: 2px 0 20px 10px;
@@ -289,7 +321,7 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   height: 13px;
   font-size: 12px;
 }
-/* line 319, ../scss/style.scss */
+/* line 343, ../scss/style.scss */
 #stylized button {
   clear: both;
   margin-left: 150px;

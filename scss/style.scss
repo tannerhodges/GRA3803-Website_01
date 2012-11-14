@@ -16,7 +16,9 @@ $c3: #52A05F;		/* Light green */
 $c4: #286C35;		/* Dark green */
 $c5: #BFC2B3;		/* Tan */
 
-$primary: $c2;
+$primary: lighten($c2,0);
+$secondary: $c3;
+$tertiary: $c5; /* darken($c3,50) */
 
 /* Golden ratio */
 $golden: 1.61803398875;
@@ -25,10 +27,10 @@ $golden: 1.61803398875;
 $full: 1000px;
 $grid: 4;
 $pad: 20px;
-$rate: 6;
+$footer-h: 300px;
 
 /* Golden ratios */
-$header-h: $full; @for $i from 1 through $rate { $header-h: $header-h / $golden; }
+$header-h: $full; @for $i from 1 through 6 { $header-h: $header-h / $golden; }
 $left-col: ($full/$golden) - ($pad*2);
 $right-col: $full * (1-(1/$golden)) - ($pad*2);
 
@@ -119,10 +121,18 @@ $right-col: $full * (1-(1/$golden)) - ($pad*2);
 /* Setup height to always reach at least 100% of the page - in case we don't have much content, you know... */
 html, body { min-height: 100%; }
 
-body {
-}
-
 .clearfix { clear: both; }
+
+/* Background column - fills with color (or whatever) */
+#bg-column {
+	$bg-width: $full + ($pad * 2);
+	width: $bg-width;
+	height: 100%;
+	position: fixed;
+	left: 50%;
+	margin-left: $bg-width / -2;
+	margin-top: 0;
+}
 
 /* Wrap */
 .wrap {
@@ -141,6 +151,7 @@ body {
 	}
 }
 
+/* Header */
 header {
 	position: fixed;
 	top: 0;
@@ -155,9 +166,11 @@ header {
 	}
 }
 
+/* Content */
 #content { 
-	padding-top: $header-h;
+	position: relative; 
 	min-height: 600px - $header-h;
+	padding-top: $header-h;
 }
 
 /* Nav */
@@ -170,8 +183,11 @@ header {
 	}
 }
 
-#footer {
-	min-height: 300px;
+/* Footer */
+footer {
+	position: relative; 
+	width: 100%;
+	min-height: $footer-h;
 }
 
 
@@ -184,6 +200,7 @@ body {
 	@include font-text;
 	font-size: 16px;
 	line-height: 22px;
+	color: #333;
 }
 
 a {
@@ -192,6 +209,17 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 { @include font-headline; }
+
+/* Background column colors and such */
+#bg-column {	
+	background-color: #fff;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	@include shadow(0,0,$pad,1px,rgba(#888,0.3));
+	z-index: 0;
+}
+#content, footer { z-index: 10; }
+header { z-index: 20; }
 
 header {
 	background-color: rgba($primary,0.95);
@@ -202,6 +230,8 @@ header {
 		rgba(0, 0, 0, 0.3) 0 1px 10px,
 		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset
 		);
+		
+/*	@include gradient(rgba(lighten($secondary, 10),0.5), rgba($secondary,0.95)); */
 	
 	/* Header Link */
 	h1 a {
@@ -224,27 +254,21 @@ header {
 		position: relative;
 		top: 1px;
 		margin-right: $pad;
-		border-bottom: 1px dotted rgba($c5, 0.3);
+		border-bottom: 1px dotted rgba($tertiary, 0.3);
 		
 		@include font-headline;
 		letter-spacing: 1px;
 		text-transform: lowercase;
 		text-decoration: none;
 		
-		&:link, &:active, &:visited { color: $c5; }
+		&:link, &:active, &:visited { color: $tertiary; }
 		&:hover {
-			color: lighten($c5, 20);
+			color: lighten($tertiary, 20);
 		}
 	}
 }
 
 #content {
-	background-color: #fff;
-	color: #333;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
-	@include shadow(0,0,$pad,1px,rgba(#888,0.3));
-	
 	h2 {
 		font-weight: bold;
 		font-size: 1.75em;
@@ -254,9 +278,9 @@ header {
 	}
 }
 
-#footer {
-	border-top: 1px solid $c4; 
-	@include gradient(rgba(lighten($c4, 10),0.5), rgba($c4,0.95));
+footer {
+	border-top: 1px solid $secondary; 
+	@include gradient(rgba(lighten($secondary, 10),0.5), rgba($secondary,0.95));
 	@include shadow(0,0,10px,1px,rgba(#000,0.3));
 }
 
