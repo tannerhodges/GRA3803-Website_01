@@ -1,3 +1,6 @@
+/* Init with Compass */
+@import "compass";
+
 /* Init with reset */
 @import url("reset.css");
 
@@ -30,16 +33,16 @@ $left-col: ($full/$golden) - ($pad*2);
 $right-col: $full * (1-(1/$golden)) - ($pad*2);
 
 /* Mixins */
-@mixin shadow {
-	$blur: $pad;
-	border-left: 1px solid #ddd;
-	border-right: 1px solid #ddd;
-	
-	-webkit-box-shadow: 0 0 $blur 1px rgba(128, 128, 128, .3);
-	-moz-box-shadow: 0 0 $blur 1px rgba(128,128,128,.3);
-	box-shadow: 0 0 $blur 1px rgba(128, 128, 128, .3);
+@mixin shadow($h, $v, $blur, $spread, $c) {
+	-webkit-box-shadow: $h $v $blur $spread $c;
+	-moz-box-shadow: $h $v $blur $spread $c;
+	box-shadow: $h $v $blur $spread $c;
 }
 @mixin gradient($ctop, $cbot) {
+	@include filter-gradient($ctop, $cbot, vertical);
+	@include background-image(linear-gradient(top, $ctop 0%, $cbot 100%));
+}
+@mixin gradient_old($ctop, $cbot) {
 	background: $ctop; /* Old browsers */
 	background: -moz-linear-gradient(top, $ctop 0%, $cbot 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ctop), color-stop(100%,$cbot)); /* Chrome,Safari4+ */
@@ -58,11 +61,11 @@ $right-col: $full * (1-(1/$golden)) - ($pad*2);
 /* Museo Sans */
 @font-face {
     font-family: '_.regular';
-    src: url('./fonts/./fonts/museosans_500-webfont-webfont.eot');
-    src: url('./fonts/./fonts/museosans_500-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/./fonts/museosans_500-webfont-webfont.woff') format('woff'),
-         url('./fonts/./fonts/museosans_500-webfont-webfont.ttf') format('truetype'),
-         url('./fonts/./fonts/museosans_500-webfont-webfont.svg#_.regular') format('svg');
+    src: url('./fonts/museosans_500-webfont-webfont.eot');
+    src: url('./fonts/museosans_500-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/museosans_500-webfont-webfont.woff') format('woff'),
+         url('./fonts/museosans_500-webfont-webfont.ttf') format('truetype'),
+         url('./fonts/museosans_500-webfont-webfont.svg#_.regular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -188,20 +191,17 @@ a {
 	&:hover { color: lighten($primary, 20); }
 }
 
+h1, h2, h3, h4, h5, h6 { @include font-headline; }
+
 header {
 	background-color: rgba($primary,0.95);
 	border-bottom: 3px solid darken($primary, 20);
 	
 	/* 2 Shadows: Bottom and Inset */
-	-webkit-box-shadow:
+	@include box-shadow(
 		rgba(0, 0, 0, 0.3) 0 1px 10px,
-		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
-	-moz-box-shadow:
-		rgba(0, 0, 0, 0.3) 0 1px 10px,
-		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
-	box-shadow:
-		rgba(0, 0, 0, 0.3) 0 1px 10px,
-		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset
+		);
 	
 	/* Header Link */
 	h1 a {
@@ -230,7 +230,6 @@ header {
 		letter-spacing: 1px;
 		text-transform: lowercase;
 		text-decoration: none;
-		font-weight: light;
 		
 		&:link, &:active, &:visited { color: $c5; }
 		&:hover {
@@ -242,10 +241,11 @@ header {
 #content {
 	background-color: #fff;
 	color: #333;
-	@include shadow;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	@include shadow(0,0,$pad,1px,rgba(#888,0.3));
 	
 	h2 {
-		@include font-headline;
 		font-weight: bold;
 		font-size: 1.75em;
 		line-height: 1.75em;
@@ -255,7 +255,9 @@ header {
 }
 
 #footer {
-	@include gradient(lighten($c4, 10), $c4); 
+	border-top: 1px solid $c4; 
+	@include gradient(rgba(lighten($c4, 10),0.5), rgba($c4,0.95));
+	@include shadow(0,0,10px,1px,rgba(#000,0.3));
 }
 
 
@@ -319,7 +321,7 @@ header {
 		margin-left: 150px;
 		width: 125px;
 		height: 31px;
-		background: #666666 url(img/button.png) no-repeat;
+		background-color: #666666;
 		text-align: center;
 		line-height: 31px;
 		color: #FFFFFF;
