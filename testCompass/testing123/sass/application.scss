@@ -1,0 +1,17 @@
+@import "base";
+
+#wrapper {
+  @include container;
+}
+
+@mixin three-column {
+  .container { @include container;  }
+  .header,
+  .footer    { @include column(24); }
+  .sidebar   { @include column(6);  }
+  article    { @include column(10); }
+  .rightbar  { @include column(8);  }
+}
+body#article,
+body#snippet,
+body#blog-post { @include three-column; }

@@ -1,7 +1,18 @@
 @import url("reset.css");
+/* Init with reset */
 /* ====================================================================
-	INIT
+	COLOR SCHEMES
    ==================================================================== */
+/* Colors */
+/* Gray blue */
+/* Rich blue */
+/* Light green */
+/* Dark green */
+/* Tan */
+/* Golden ratio */
+/* Dimensions */
+/* Golden ratios */
+/* Mixins */
 /* ====================================================================
 	FONTS -- http://awesome-fontstacks.com/bundles/339-awesome-bundle-339
    ==================================================================== */
@@ -38,57 +49,49 @@
   font-style: normal; }
 
 /* ====================================================================
-	COLOR SCHEMES
-   ==================================================================== */
-/* Colors */
-/* Gray blue */
-/* Rich blue */
-/* Light green */
-/* Dark green */
-/* Tan */
-/* Dimensions */
-/* Mixins */
-/* ====================================================================
 	BASIC LAYOUT
    ==================================================================== */
 /* Setup height to always reach at least 100% of the page - in case we don't have much content, you know... */
 html, body {
   min-height: 100%; }
 
-body {
-  font: 16px/22px Arial, sans-serif; }
-
 .clearfix {
   clear: both; }
 
 /* Wrap */
 .wrap {
-  width: 960px;
-  padding: 16px;
+  width: 1000px;
   height: 100%;
-  margin: auto; }
+  margin: auto;
+  /* Columns */ }
   .wrap .column {
-    float: left; }
+    float: left;
+    padding: 20px;
+    /* Sides */ }
     .wrap .column.left {
-      width: 720px; }
+      width: 578.03399px; }
     .wrap .column.right {
-      width: 240px; }
+      width: 341.96601px; }
 
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px; }
+  height: 55.72809px;
+  line-height: 55.72809px; }
+  header h1 {
+    float: left;
+    margin-left: 20px; }
 
 #content {
-  padding-top: 116px; }
+  padding-top: 55.72809px;
+  min-height: 544.27191px; }
 
 /* Nav */
-#main-nav ul li {
-  float: left;
-  padding: 1em; }
-  #main-nav ul li:first-child {
+#main-nav li {
+  float: left; }
+  #main-nav li:first-child {
     padding-left: 0; }
 
 #footer {
@@ -98,19 +101,137 @@ header {
 	GENERAL STYLES
    ==================================================================== */
 body {
-  background: #1038bf url("../img/creampaper.png"); }
+  background: #1038bf url("../img/creampaper.png");
+  font-family: "gentium_book_basicregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif;
+  font-size: 1.115em;
+  font-size: 16px;
+  line-height: 22px; }
+
+a:link, a:active, a:visited {
+  color: #1038bf; }
+a:hover {
+  color: #466cef; }
 
 header {
-  background-color: #1038bf;
-  border-bottom: 3px solid #081c61; }
-  header h1 {
-    font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif; }
+  background-color: rgba(16, 56, 191, 0.95);
+  border-bottom: 3px solid #081c61;
+  /* 2 Shadows: Bottom and Inset */
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+  /* Header Link */ }
+  header h1 a {
+    margin-right: 20px;
+    font-family: "liberation_serifregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif;
+    font-size: 1.102em;
+    font-size: 1.8em;
+    letter-spacing: 0.2em;
+    text-shadow: 0 2px 2px rgba(8, 28, 97, 0.3), 0 1px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none; }
+    header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
+      color: #fff; }
+
+/* Main navigation items */
+#main-nav li a {
+  position: relative;
+  top: 1px;
+  margin-right: 20px;
+  border-bottom: 1px dotted rgba(191, 194, 179, 0.3);
+  font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  text-decoration: none;
+  font-weight: light; }
+  #main-nav li a:link, #main-nav li a:active, #main-nav li a:visited {
+    color: #bfc2b3; }
+  #main-nav li a:hover {
+    color: #efefec; }
 
 #content {
-  background-color: #273237;
-  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5); }
+  background-color: #fff;
+  color: #333;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  -webkit-box-shadow: 0 0 20px 1px rgba(128, 128, 128, 0.3);
+  -moz-box-shadow: 0 0 20px 1px rgba(128, 128, 128, 0.3);
+  box-shadow: 0 0 20px 1px rgba(128, 128, 128, 0.3); }
+  #content h2 {
+    font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
+    font-weight: bold;
+    font-size: 1.75em;
+    line-height: 1.75em;
+    border-bottom: 2px dotted #aaa;
+    margin-bottom: 0.5em; }
 
 #footer {
-  background-color: #286c35; }
+  background: #369147;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #369147 0%, #286c35 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #369147), color-stop(100%, #286c35));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #369147 0%, #286c35 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #369147 0%, #286c35 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #369147 0%, #286c35 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #369147 0%, #286c35 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$ctop', endColorstr='$cbot',GradientType=0 );
+  /* IE6-9 */ }
+
+/* Found this form at http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html */
+/* ----------- My Form ----------- */
+.myform {
+  margin: 10px 0;
+  padding: 14px;
+  width: 550.03399px;
+  font-size: 12px;
+  line-height: 14px; }
+  .myform p, .myform h1, .myform form, .myform button {
+    border: 0;
+    margin: 0;
+    padding: 0; }
+
+/* ----------- stylized ----------- */
+#stylized {
+  border: solid 2px #b7ddf2;
+  background: #ebf4fb; }
+  #stylized h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px; }
+  #stylized p {
+    font-size: 11px;
+    color: #666666;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #b7ddf2;
+    padding-bottom: 10px; }
+  #stylized label {
+    display: block;
+    clear: both;
+    float: left;
+    font-weight: bold;
+    text-align: right;
+    width: 140px;
+    line-height: 25px; }
+  #stylized input {
+    float: left;
+    margin: 2px 0 20px 10px;
+    border: solid 1px #aacfe4;
+    padding: 4px 2px;
+    width: 200px;
+    height: 13px;
+    font-size: 12px; }
+  #stylized button {
+    clear: both;
+    margin-left: 150px;
+    width: 125px;
+    height: 31px;
+    background: #666666 url(img/button.png) no-repeat;
+    text-align: center;
+    line-height: 31px;
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: bold; }

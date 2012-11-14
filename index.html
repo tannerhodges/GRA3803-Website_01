@@ -12,9 +12,9 @@
 	
 <header>
 	<div class="wrap">
-		<h1 id="logo">Organic Utopia</h1>
-		<nav id="main-nav">
-			<ul>
+		<h1 id="logo"><a href="index.html">Organic Utopia</a></h1>
+		<nav>
+			<ul id="main-nav">
 				<li><a href="#">Products</a></li>
 				<li><a href="#">About Us</a></li>
 				<li><a href="#">Contact Us</a></li>
@@ -27,18 +27,41 @@
 	<div class="column left">
 		<h2>Tell Me More!</h2>
 		<p>To be added to our mailing list for news of sales and special events, please fill out the following information:</p>
-			Name<br />
-			Address<br />
-			City/State/Zip<br />
+		
+		
+<div id="stylized" class="myform">
+	<form id="form" name="form" method="post" action="index.html">
+		<h3>Sign-up form</h3>
+		<p>This is the basic look of my form without table</p>
+		
+		<label>Name</label>
+		<input type="text" name="name" id="name" />
+		
+		<label>Address</label>
+		<input type="text" name="address" id="address" />
+		
+		<label>City/State/Zip</label>
+		<input type="text" name="city-state-zip" id="city-state-zip" />
+		
+		<div class="clearfix"></div>
+		<hr />
+		
+		<label>I am currently a member of the Organic Utopia cooperative</label>
+		<input type="radio" name="member" value="yes">Yes<br />
+		<input type="radio" name="member" value="no">No<br />
+		<input type="radio" name="member" value="unsure">Unsure<br />
+		
+		<button type="submit">Submit</button>
+		<div class="clearfix"></div>
+		
+	</form>
+</div>
+		
 		<p>
 			I'm interested in receiving information on:<br />
 			Sales (Checkbox) Events (Checkbox) Charity Drives (Checkbox)
 		</p>
 		<p>
-			I am currently a member of the Organic Utopia cooperative<br />
-			(Radio Button) Yes<br />
-			(Radio Button) No<br />
-			(Radio Button) Can't Remember
 		</p>
 		<p>I'm interested in volunteering for:</p>
 		<p>(List) Store Events, Planting Season, Anything</p>

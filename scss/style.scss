@@ -1,8 +1,54 @@
+/* Init with reset */
+@import url("reset.css");
+
+
 /* ====================================================================
-	INIT
+	COLOR SCHEMES
    ==================================================================== */
 
-@import url("reset.css");
+/* Colors */
+$c1: #273237; 		/* Gray blue */
+$c2: #1038BF;		/* Rich blue */
+$c3: #52A05F;		/* Light green */
+$c4: #286C35;		/* Dark green */
+$c5: #BFC2B3;		/* Tan */
+
+$primary: $c2;
+
+/* Golden ratio */
+$golden: 1.61803398875;
+
+/* Dimensions */
+$full: 1000px;
+$grid: 4;
+$pad: 20px;
+$rate: 6;
+
+/* Golden ratios */
+$header-h: $full; @for $i from 1 through $rate { $header-h: $header-h / $golden; }
+$left-col: ($full/$golden) - ($pad*2);
+$right-col: $full * (1-(1/$golden)) - ($pad*2);
+
+/* Mixins */
+@mixin shadow {
+	$blur: $pad;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	
+	-webkit-box-shadow: 0 0 $blur 1px rgba(128, 128, 128, .3);
+	-moz-box-shadow: 0 0 $blur 1px rgba(128,128,128,.3);
+	box-shadow: 0 0 $blur 1px rgba(128, 128, 128, .3);
+}
+@mixin gradient($ctop, $cbot) {
+	background: $ctop; /* Old browsers */
+	background: -moz-linear-gradient(top, $ctop 0%, $cbot 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ctop), color-stop(100%,$cbot)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $ctop 0%,$cbot 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $ctop 0%,$cbot 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $ctop 0%,$cbot 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $ctop 0%,$cbot 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$ctop', endColorstr='$cbot',GradientType=0 ); /* IE6-9 */
+}
 
 
 /* ====================================================================
@@ -64,32 +110,6 @@
 
 
 /* ====================================================================
-	COLOR SCHEMES
-   ==================================================================== */
-
-/* Colors */
-$c1: #273237; 		/* Gray blue */
-$c2: #1038BF;		/* Rich blue */
-$c3: #52A05F;		/* Light green */
-$c4: #286C35;		/* Dark green */
-$c5: #BFC2B3;		/* Tan */
-
-$primary: $c2;
-
-/* Dimensions */
-$full: 960px;
-$header-h: 100px;
-$pad: 16px;
-
-/* Mixins */
-@mixin shadow {
-	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, .5);
-	-moz-box-shadow: 0 0 10px 1px rgba(0,0,0,.5);
-	box-shadow: 0 0 10px 1px rgba(0, 0, 0, .5);
-}
-
-
-/* ====================================================================
 	BASIC LAYOUT
    ==================================================================== */
 
@@ -97,7 +117,6 @@ $pad: 16px;
 html, body { min-height: 100%; }
 
 body {
-	font: 16px/22px Arial, sans-serif;
 }
 
 .clearfix { clear: both; }
@@ -105,17 +124,17 @@ body {
 /* Wrap */
 .wrap {
 	width: $full;
-	padding: $pad;
 	height: 100%;
 	margin: auto;
+	
+	/* Columns */
 	.column {
 		float: left;
-		&.left {
-			width: $full * (3/4);
-		}
-		&.right {
-			width: $full * (1/4);
-		}
+		padding: $pad; 
+		
+		/* Sides */
+		&.left { width: $left-col; }
+		&.right { width: $right-col; }
 	}
 }
 
@@ -125,22 +144,25 @@ header {
 	left: 0;
 	width: 100%;
 	height: $header-h;
+	line-height: $header-h * 1;
+	
 	h1 {
+		float: left;
+		margin-left: $pad;
 	}
 }
+
 #content { 
-	padding-top: $header-h + $pad;
+	padding-top: $header-h;
+	min-height: 600px - $header-h;
 }
 
 /* Nav */
 #main-nav {
-	ul {
-		li {
-			float: left; 
-			padding: 1em;
-			&:first-child {
-				padding-left: 0;
-			}
+	li {
+		float: left; 
+		&:first-child {
+			padding-left: 0;
 		}
 	}
 }
@@ -156,21 +178,152 @@ header {
 
 body {
 	background: $primary url('../img/creampaper.png');
+	@include font-text;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+a {
+	&:link, &:active, &:visited { color: $primary; }
+	&:hover { color: lighten($primary, 20); }
 }
 
 header {
-	background-color: $primary;
+	background-color: rgba($primary,0.95);
 	border-bottom: 3px solid darken($primary, 20);
-	h1 {
+	
+	/* 2 Shadows: Bottom and Inset */
+	-webkit-box-shadow:
+		rgba(0, 0, 0, 0.3) 0 1px 10px,
+		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+	-moz-box-shadow:
+		rgba(0, 0, 0, 0.3) 0 1px 10px,
+		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+	box-shadow:
+		rgba(0, 0, 0, 0.3) 0 1px 10px,
+		rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
+	
+	/* Header Link */
+	h1 a {
+		margin-right: $pad;
+		@include font-decoration;
+		font-size: 1.8em;
+		letter-spacing: 0.2em;
+		text-shadow:
+			0 2px 2px rgba(darken($primary,20), 0.3),
+			0 1px 10px rgba(0,0,0,0.2);
+		text-decoration: none;
+		
+		&:link, &:active, &:visited, &:hover { color: #fff; }
+	}
+}
+
+/* Main navigation items */
+#main-nav li {
+	a {
+		position: relative;
+		top: 1px;
+		margin-right: $pad;
+		border-bottom: 1px dotted rgba($c5, 0.3);
+		
 		@include font-headline;
+		letter-spacing: 1px;
+		text-transform: lowercase;
+		text-decoration: none;
+		font-weight: light;
+		
+		&:link, &:active, &:visited { color: $c5; }
+		&:hover {
+			color: lighten($c5, 20);
+		}
 	}
 }
 
 #content {
-	background-color: $c1;
+	background-color: #fff;
+	color: #333;
 	@include shadow;
+	
+	h2 {
+		@include font-headline;
+		font-weight: bold;
+		font-size: 1.75em;
+		line-height: 1.75em;
+		border-bottom: 2px dotted #aaa;
+		margin-bottom: 0.5em;
+	}
 }
 
 #footer {
-	background-color: $c4;
+	@include gradient(lighten($c4, 10), $c4); 
+}
+
+
+
+
+
+/* Found this form at http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html */
+/* ----------- My Form ----------- */
+
+.myform {
+	margin: 10px 0;
+
+	padding: 14px;
+	width: $left-col - (14px * 2);
+	
+	
+	font-size: 12px;
+	line-height: 14px;
+	
+	p, h1, form, button{border:0; margin:0; padding:0;}
+}
+
+
+/* ----------- stylized ----------- */
+#stylized{
+	border: solid 2px #b7ddf2;
+	background: #ebf4fb;
+	
+	h3 {
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 8px;
+	}
+	p{
+		font-size: 11px;
+		color: #666666;
+		margin-bottom: 20px;
+		border-bottom: solid 1px #b7ddf2;
+		padding-bottom: 10px;
+	}
+	label{
+		display: block;
+		clear: both;
+		float: left;
+		font-weight: bold;
+		text-align: right;
+		width: 140px;
+		line-height: 25px;
+	}
+	input{
+		float: left;
+		margin: 2px 0 20px 10px;
+		border: solid 1px #aacfe4;
+		padding: 4px 2px;
+		width: 200px;
+		height: 13px;
+		font-size: 12px;
+	}
+	button{
+		clear: both;
+		margin-left: 150px;
+		width: 125px;
+		height: 31px;
+		background: #666666 url(img/button.png) no-repeat;
+		text-align: center;
+		line-height: 31px;
+		color: #FFFFFF;
+		font-size: 11px;
+		font-weight: bold;
+	}
 }
