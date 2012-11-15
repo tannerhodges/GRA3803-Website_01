@@ -162,27 +162,28 @@ body {
   /*	@include box-shadow(rgba(#888,0.5) 0 0 100px 25px inset); */
   font-family: "gentium_book_basicregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif;
   font-size: 1.115em;
+  font-weight: light;
   font-size: 16px;
   line-height: 22px;
   color: #333;
 }
 
-/* line 211, ../scss/style.scss */
+/* line 212, ../scss/style.scss */
 a:link, a:active, a:visited {
   color: #1038bf;
 }
-/* line 212, ../scss/style.scss */
+/* line 213, ../scss/style.scss */
 a:hover {
   color: #466cef;
 }
 
-/* line 215, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
 }
 
 /* Background column colors and such */
-/* line 218, ../scss/style.scss */
+/* line 219, ../scss/style.scss */
 #bg-column {
   background-color: #fff;
   border-left: 1px solid #ddd;
@@ -193,22 +194,22 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
-/* line 225, ../scss/style.scss */
+/* line 226, ../scss/style.scss */
 #content, footer {
   z-index: 10;
 }
 
-/* line 226, ../scss/style.scss */
+/* line 227, ../scss/style.scss */
 header {
   z-index: 20;
 }
 
-/* line 228, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 #content {
   border-bottom: 5px solid #bfc2b3;
 }
 
-/* line 232, ../scss/style.scss */
+/* line 233, ../scss/style.scss */
 header {
   background-color: rgba(16, 56, 191, 0.925);
   border-bottom: 3px solid #081c61;
@@ -218,23 +219,22 @@ header {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 10px, rgba(0, 0, 0, 0.2) 0 1px 20px 0px inset;
   /* Header Link */
 }
-/* line 243, ../scss/style.scss */
+/* line 244, ../scss/style.scss */
 header h1 a {
   margin-right: 20px;
-  font-family: "liberation_serifregular", "Times New Roman", "Georgia", "Palatino", "Hoefler Text", "Baskerville", serif;
-  font-size: 1.102em;
+  font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   font-size: 2em;
   letter-spacing: 0.2em;
   text-shadow: 0 2px 2px rgba(8, 28, 97, 0.3), 0 1px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
 }
-/* line 253, ../scss/style.scss */
+/* line 254, ../scss/style.scss */
 header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   color: #fff;
 }
 
 /* Main navigation items */
-/* line 259, ../scss/style.scss */
+/* line 260, ../scss/style.scss */
 #main-nav li a {
   position: relative;
   top: 1px;
@@ -245,16 +245,16 @@ header h1 a:link, header h1 a:active, header h1 a:visited, header h1 a:hover {
   text-transform: lowercase;
   text-decoration: none;
 }
-/* line 272, ../scss/style.scss */
+/* line 273, ../scss/style.scss */
 #main-nav li a:link, #main-nav li a:active, #main-nav li a:visited {
   color: #bfc2b3;
 }
-/* line 273, ../scss/style.scss */
+/* line 274, ../scss/style.scss */
 #main-nav li a:hover {
   color: #efefec;
 }
 
-/* line 279, ../scss/style.scss */
+/* line 280, ../scss/style.scss */
 h2 {
   font-weight: bold;
   font-size: 1.75em;
@@ -265,16 +265,16 @@ h2 {
 }
 
 /* Feature Video */
-/* line 292, ../scss/style.scss */
+/* line 293, ../scss/style.scss */
 #featureVideo {
   -webkit-box-shadow: rgba(136, 136, 136, 0.3) 0 0 20px 1px;
   -moz-box-shadow: rgba(136, 136, 136, 0.3) 0 0 20px 1px;
   box-shadow: rgba(136, 136, 136, 0.3) 0 0 20px 1px;
-  border-bottom: 3px solid #bfc2b3;
+  border-bottom: 5px solid #bfc2b3;
   margin-bottom: 1em;
 }
 
-/* line 298, ../scss/style.scss */
+/* line 299, ../scss/style.scss */
 footer {
   padding-top: 20px;
   border-top: 3px solid #91c79a;
@@ -290,7 +290,7 @@ footer {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   font-size: 0.75em;
 }
-/* line 309, ../scss/style.scss */
+/* line 310, ../scss/style.scss */
 footer #credits {
   color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7), 0 1px 2px rgba(136, 136, 136, 0.2);
@@ -299,12 +299,12 @@ footer #credits {
 /* ====================================================================
 	SIDEBAR 
    ==================================================================== */
-/* line 323, ../scss/style.scss */
+/* line 324, ../scss/style.scss */
 .column.left p {
   margin-bottom: 1.5em;
 }
 
-/* line 328, ../scss/style.scss */
+/* line 329, ../scss/style.scss */
 .column.right {
   font-size: 0.8em;
   position: relative;
@@ -328,12 +328,12 @@ footer #credits {
   box-shadow: rgba(136, 136, 136, 0.1) 0 2px 2px 1px, rgba(136, 136, 136, 0.2) 0 0 10px 1px inset, rgba(136, 136, 136, 0.1) 0 0 20px 1px;
   border-bottom: 3px solid #a7ab97;
 }
-/* line 344, ../scss/style.scss */
+/* line 345, ../scss/style.scss */
 .column.right h2 {
   border-bottom-color: #bfc2b3;
   margin-bottom: 1em;
 }
-/* line 346, ../scss/style.scss */
+/* line 347, ../scss/style.scss */
 .column.right h4 {
   position: relative;
   left: -10px;
@@ -360,7 +360,7 @@ footer #credits {
   box-shadow: rgba(136, 136, 136, 0.1) -1px -1px 10px 1px inset;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(136, 136, 136, 0.3);
 }
-/* line 371, ../scss/style.scss */
+/* line 372, ../scss/style.scss */
 .column.right p {
   margin-bottom: 1.5em;
 }
@@ -369,7 +369,7 @@ footer #credits {
 	FORM STYLES
    ==================================================================== */
 /* Found this form at http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html */
-/* line 383, ../scss/style.scss */
+/* line 384, ../scss/style.scss */
 #form {
   width: 450.42719px;
   background: #d5e9d8;
@@ -383,7 +383,7 @@ footer #credits {
   -moz-box-shadow: #417e4b 0 3px 1px 0;
   box-shadow: #417e4b 0 3px 1px 0;
 }
-/* line 391, ../scss/style.scss */
+/* line 392, ../scss/style.scss */
 #form h3 {
   padding: 0.5em;
   margin-bottom: 10px;
@@ -396,7 +396,7 @@ footer #credits {
   -moz-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
   box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
 }
-/* line 392, ../scss/style.scss */
+/* line 393, ../scss/style.scss */
 #form h3:first-child {
   -webkit-border-radius: 19px 0 0 0;
   -moz-border-radius: 19px 0 0 0;
@@ -404,7 +404,7 @@ footer #credits {
   -o-border-radius: 19px 0 0 0;
   border-radius: 19px 0 0 0;
 }
-/* line 405, ../scss/style.scss */
+/* line 406, ../scss/style.scss */
 #form p {
   /* Quick reset */
   margin: 0;
@@ -413,7 +413,7 @@ footer #credits {
   /* Style */
   padding: 1em 10px 0.25em 10px;
 }
-/* line 412, ../scss/style.scss */
+/* line 413, ../scss/style.scss */
 #form label {
   display: block;
   clear: both;
@@ -423,13 +423,13 @@ footer #credits {
   line-height: 32px;
   text-align: right;
 }
-/* line 422, ../scss/style.scss */
+/* line 423, ../scss/style.scss */
 #form input, #form select {
   clear: both;
   float: left;
   margin-left: 10px;
 }
-/* line 427, ../scss/style.scss */
+/* line 428, ../scss/style.scss */
 #form input[type='text'], #form select[type='text'] {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   clear: none;
@@ -449,7 +449,7 @@ footer #credits {
   height: 1.5em;
   font-size: 1em;
 }
-/* line 442, ../scss/style.scss */
+/* line 443, ../scss/style.scss */
 #form button {
   cursor: pointer;
   clear: both;
@@ -473,7 +473,7 @@ footer #credits {
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 464, ../scss/style.scss */
+/* line 465, ../scss/style.scss */
 #form button:hover {
   background-color: #91c79a;
 }
@@ -481,7 +481,7 @@ footer #credits {
 /* ====================================================================
 	SPRY STYLES 
    ==================================================================== */
-/* line 473, ../scss/style.scss */
+/* line 474, ../scss/style.scss */
 .Accordion {
   width: 450.42719px;
   border: solid 1px #52a05f;
@@ -497,13 +497,13 @@ footer #credits {
   /* Header title for each panel */
   /* Header title hover */
 }
-/* line 481, ../scss/style.scss */
+/* line 482, ../scss/style.scss */
 .Accordion .AccordionPanel {
   margin: 0px;
   padding: 0px;
   /* Fix the last tab when it's open */
 }
-/* line 484, ../scss/style.scss */
+/* line 485, ../scss/style.scss */
 .Accordion .AccordionPanel:first-child .AccordionPanelTab {
   -webkit-border-radius: 19px 0 0 0;
   -moz-border-radius: 19px 0 0 0;
@@ -512,7 +512,7 @@ footer #credits {
   border-radius: 19px 0 0 0;
   /*			border-top: 0 none transparent; */
 }
-/* line 488, ../scss/style.scss */
+/* line 489, ../scss/style.scss */
 .Accordion .AccordionPanel:last-child .AccordionPanelTab {
   -webkit-border-radius: 0 0 19px 19px;
   -moz-border-radius: 0 0 19px 19px;
@@ -520,7 +520,7 @@ footer #credits {
   -o-border-radius: 0 0 19px 19px;
   border-radius: 0 0 19px 19px;
 }
-/* line 492, ../scss/style.scss */
+/* line 493, ../scss/style.scss */
 .Accordion .AccordionPanel:last-child .AccordionPanelContent {
   -webkit-border-radius: 0 0 19px 19px;
   -moz-border-radius: 0 0 19px 19px;
@@ -528,7 +528,7 @@ footer #credits {
   -o-border-radius: 0 0 19px 19px;
   border-radius: 0 0 19px 19px;
 }
-/* line 493, ../scss/style.scss */
+/* line 494, ../scss/style.scss */
 .Accordion .AccordionPanel:last-child.AccordionPanelOpen .AccordionPanelTab {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -536,7 +536,7 @@ footer #credits {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 498, ../scss/style.scss */
+/* line 499, ../scss/style.scss */
 .Accordion .AccordionPanelTab {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   font-size: 1.2em;
@@ -553,7 +553,7 @@ footer #credits {
   -moz-user-select: none;
   -khtml-user-select: none;
 }
-/* line 516, ../scss/style.scss */
+/* line 517, ../scss/style.scss */
 .Accordion .AccordionPanelContent {
   /* Inset Shadow */
   -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px inset;
@@ -563,16 +563,16 @@ footer #credits {
   margin: 0px;
   height: 200px;
 }
-/* line 524, ../scss/style.scss */
+/* line 525, ../scss/style.scss */
 .Accordion .AccordionPanelContent ul {
   padding: 10px;
   list-style: disc inside;
 }
-/* line 527, ../scss/style.scss */
+/* line 528, ../scss/style.scss */
 .Accordion .AccordionPanelContent ul li {
   padding-left: 10px;
 }
-/* line 534, ../scss/style.scss */
+/* line 535, ../scss/style.scss */
 .Accordion .AccordionPanelTabHover {
   /*		color: darken($secondary,20);
   		text-shadow: 0 1px 1px rgba(#fff,0.5); */
@@ -582,14 +582,14 @@ footer #credits {
 /* ====================================================================
 	TABLE STYLES
    ==================================================================== */
-/* line 551, ../scss/style.scss */
+/* line 552, ../scss/style.scss */
 table {
   width: 448.42719px;
   border-collapse: separate;
   /* Cells */
   /* Border Radius */
 }
-/* line 557, ../scss/style.scss */
+/* line 558, ../scss/style.scss */
 table td, table th {
   -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
   -moz-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
@@ -598,20 +598,20 @@ table td, table th {
   padding: 10px;
   vertical-align: middle;
 }
-/* line 560, ../scss/style.scss */
+/* line 561, ../scss/style.scss */
 table td:first-child, table th:first-child {
   padding-left: 3%;
   width: 33%;
 }
-/* line 561, ../scss/style.scss */
+/* line 562, ../scss/style.scss */
 table td:nth-child(2), table th:nth-child(2) {
   width: 33%;
 }
-/* line 562, ../scss/style.scss */
+/* line 563, ../scss/style.scss */
 table td:nth-child(3), table th:nth-child(3) {
   width: 30%;
 }
-/* line 567, ../scss/style.scss */
+/* line 568, ../scss/style.scss */
 table th {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   font-size: 1.2em;
@@ -622,15 +622,15 @@ table th {
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 577, ../scss/style.scss */
+/* line 578, ../scss/style.scss */
 table tr.alt td {
   background-color: #d5e9d8;
 }
-/* line 584, ../scss/style.scss */
+/* line 585, ../scss/style.scss */
 table tr:first-child th {
   /* &:last-child { @include border-radius(0 $pad 0 0); } */
 }
-/* line 585, ../scss/style.scss */
+/* line 586, ../scss/style.scss */
 table tr:first-child th:first-child {
   -webkit-border-radius: 20px 0 0 0;
   -moz-border-radius: 20px 0 0 0;
@@ -638,7 +638,7 @@ table tr:first-child th:first-child {
   -o-border-radius: 20px 0 0 0;
   border-radius: 20px 0 0 0;
 }
-/* line 590, ../scss/style.scss */
+/* line 591, ../scss/style.scss */
 table tr:last-child td {
   /*				border-bottom: 3px solid $secondary; */
   -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px, #417e4b 0 3px 1px 0;
@@ -646,7 +646,7 @@ table tr:last-child td {
   box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px, #417e4b 0 3px 1px 0;
   /* &:first-child { @include border-radius(0 0 0 $pad); } */
 }
-/* line 598, ../scss/style.scss */
+/* line 599, ../scss/style.scss */
 table tr:last-child td:last-child {
   -webkit-border-radius: 0 0 20px 0;
   -moz-border-radius: 0 0 20px 0;

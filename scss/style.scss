@@ -202,6 +202,7 @@ body {
 /*	@include box-shadow(rgba(#888,0.5) 0 0 100px 25px inset); */
 
 	@include font-text;
+	font-weight: light;
 	font-size: 16px;
 	line-height: 22px;
 	color: #333;
@@ -242,7 +243,7 @@ header {
 	/* Header Link */
 	h1 a {
 		margin-right: $pad;
-		@include font-decoration;
+		@include font-headline;
 		font-size: 2em;
 		letter-spacing: 0.2em;
 		text-shadow:
@@ -291,7 +292,7 @@ h2 {
 /* Feature Video */
 #featureVideo {
 	@include box-shadow(rgba(#888,0.3) 0 0 $pad 1px);
-	border-bottom: 3px solid $tertiary;
+	border-bottom: 5px solid $tertiary;
 	margin-bottom: 1em;
 }
 
