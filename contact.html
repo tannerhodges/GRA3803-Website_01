@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Organic Utopia | </title>
+	
+	<link rel="stylesheet" type="text/css" href="./css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAACJKAv/lCsM/50uDf+kMA7/qTIO/6wzDv+vMw//sDQP/7A0D/+vMw//rDMO/6kyDv+kMA7/nS4N/5QrDP+KKAz/lCsM/54uDf+mMQ7/rDMO/7E0D/+0NxH/tzgS/7c0Df+3Mwv/tzYQ/7U3Ev+xNA//rDMO/6YxDv+eLg3/lCsM/50uDf+mMQ7/rjMP/7M0D/+3NxH/ti0G/7IpAv+2PRn/t0Ee/7IwCv+0KQL/uDcR/7M0D/+uMw//pjEO/50uDf+jMA7/rDIO/7M0D/+4OBH/ty0F/8JhRf/ix7//4sK5/9+4rP/ev7X/w3pl/7MsBf+5NxH/szQP/6wzDv+kMA7/qTEO/7E0D/+3NxH/uC8H/8NYOf/6/f7/2peD/787E//AOxT/xkwo/+fFu//Ed2H/tioB/7c4Ev+xNA//qTIO/6wyDv+0NQ//ujkT/7YnAP/hqpn/8OTh/7QnAP++NQz/vjoS/7goAP/HUzL/3Laq/7QtBf+6OBH/tDUP/6wzDv+vMw//tTUP/7s5E/+3KAD/6L2w/+bNxv+3LAL/wDsT/745Ef+9Ng3/w0gj/9+4rP+4NhD/uzcP/7U1D/+vMw//sDMP/7Y1D/+8OhP/tygA/+i9sf/n0Mn/tisB/8A6Ev++ORH/vTQL/8NIJP/guq//uDYP/7w3EP+2Ng//sDQP/7AzD/+2NQ//vDoT/7coAP/ovbH/58/I/7YrAf/AOhL/vjkR/700C//DSCP/4Lqv/7g2D/+8NxD/tjYP/7A0D/+uMw//tTUP/7s5E/+3KAD/572x/+fQyf+2KwH/wDoS/745Ef+9NAv/w0gj/9+6r/+4NhD/uzcP/7U1D/+vMw//rDIO/7Q1D/+6ORP/tycA/+e7rv/mzcX/tyoA/8A6E/++ORH/vTQL/8RHIv/ft6v/uDUO/7o2D/+0NQ//rDMO/6kxDv+xNA//uDgS/7EpAP/owbb/6dTO/7ItBf+/OhL/vjkR/7w0C//ASyj/4L+2/7E3E/+3NQ7/sTQP/6kxDv+jMA7/rDMP/7IzDv/FdFz/4LSn/+K4q//HfGX/uzkT/700DP+/RiL/0ZF+/+C0p//HgWz/sTgU/6wyDf+kMA7/nC4N/6YxDv+uMw//tDUQ/7QtBf+2LQT/vDcQ/7s3EP+6NhD/ujcQ/7k1Dv+0LQX/tDUP/64zD/+mMQ7/nS4N/5MrDP+dLg3/pjEO/6wyDv+xNRH/tDYR/7U1D/+2NQ//tjUP/7U1D/+0NQ//sTYR/6wyDv+mMQ7/ni4N/5QrDP+JKAv/kysM/5wuDf+jMA7/qTEO/6wzDv+uMw//sDMP/7AzD/+vMw//rDMO/6kyDv+jMA7/nS4N/5QrDP+JKAv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" rel="shortcut icon" type="image/x-icon" />
+	<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABMLAAATCwAAAAAAAAAAAACJKAv/lCsM/50uDf+kMA7/qTIO/6wzDv+vMw//sDQP/7A0D/+vMw//rDMO/6kyDv+kMA7/nS4N/5QrDP+KKAz/lCsM/54uDf+mMQ7/rDMO/7E0D/+0NxH/tzgS/7c0Df+3Mwv/tzYQ/7U3Ev+xNA//rDMO/6YxDv+eLg3/lCsM/50uDf+mMQ7/rjMP/7M0D/+3NxH/ti0G/7IpAv+2PRn/t0Ee/7IwCv+0KQL/uDcR/7M0D/+uMw//pjEO/50uDf+jMA7/rDIO/7M0D/+4OBH/ty0F/8JhRf/ix7//4sK5/9+4rP/ev7X/w3pl/7MsBf+5NxH/szQP/6wzDv+kMA7/qTEO/7E0D/+3NxH/uC8H/8NYOf/6/f7/2peD/787E//AOxT/xkwo/+fFu//Ed2H/tioB/7c4Ev+xNA//qTIO/6wyDv+0NQ//ujkT/7YnAP/hqpn/8OTh/7QnAP++NQz/vjoS/7goAP/HUzL/3Laq/7QtBf+6OBH/tDUP/6wzDv+vMw//tTUP/7s5E/+3KAD/6L2w/+bNxv+3LAL/wDsT/745Ef+9Ng3/w0gj/9+4rP+4NhD/uzcP/7U1D/+vMw//sDMP/7Y1D/+8OhP/tygA/+i9sf/n0Mn/tisB/8A6Ev++ORH/vTQL/8NIJP/guq//uDYP/7w3EP+2Ng//sDQP/7AzD/+2NQ//vDoT/7coAP/ovbH/58/I/7YrAf/AOhL/vjkR/700C//DSCP/4Lqv/7g2D/+8NxD/tjYP/7A0D/+uMw//tTUP/7s5E/+3KAD/572x/+fQyf+2KwH/wDoS/745Ef+9NAv/w0gj/9+6r/+4NhD/uzcP/7U1D/+vMw//rDIO/7Q1D/+6ORP/tycA/+e7rv/mzcX/tyoA/8A6E/++ORH/vTQL/8RHIv/ft6v/uDUO/7o2D/+0NQ//rDMO/6kxDv+xNA//uDgS/7EpAP/owbb/6dTO/7ItBf+/OhL/vjkR/7w0C//ASyj/4L+2/7E3E/+3NQ7/sTQP/6kxDv+jMA7/rDMP/7IzDv/FdFz/4LSn/+K4q//HfGX/uzkT/700DP+/RiL/0ZF+/+C0p//HgWz/sTgU/6wyDf+kMA7/nC4N/6YxDv+uMw//tDUQ/7QtBf+2LQT/vDcQ/7s3EP+6NhD/ujcQ/7k1Dv+0LQX/tDUP/64zD/+mMQ7/nS4N/5MrDP+dLg3/pjEO/6wyDv+xNRH/tDYR/7U1D/+2NQ//tjUP/7U1D/+0NQ//sTYR/6wyDv+mMQ7/ni4N/5QrDP+JKAv/kysM/5wuDf+jMA7/qTEO/6wzDv+uMw//sDMP/7AzD/+vMw//rDMO/6kyDv+jMA7/nS4N/5QrDP+JKAv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" rel="icon" type="image/x-icon" />
+
+	<script type="text/javascript" src="./js/jquery-1.8.2.min.js"></script>
+	<script language="JavaScript" type="text/javascript" src="./js/SpryEffects.js"></script>
+	<script language="JavaScript" type="text/javascript" src="./js/SpryAccordion.js"></script>
+	
+</head>
+<body>
+
+<div id="bg-column"></div>
+
+<header>
+	<div class="wrap">
+		<h1 id="logo"><a href="index.html">Organic Utopia</a></h1>
+		<nav>
+			<ul id="main-nav">
+				<li><a href="./about.html">About</a></li>
+				<li><a href="./products.html">Products</a></li>
+				<li><a href="./services.html">Services</a></li>
+				<li><a href="./contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<div id="content" class="wrap">
+	<div class="column left">
+
+		<!-- FORM PAGE -->
+		<h2>Tell Me More!</h2>
+		<p>To be added to our mailing list for news of sales and special events, please fill out the following information:</p>
+		
+		<div id="stylized" class="myform">
+			<form id="form" name="form" method="post" action="index.html">
+				<h3>Sign-up form</h3>
+				<p>This is the basic look of my form without table</p>
+				
+				<label>Name</label>
+				<input type="text" name="name" id="name" />
+				
+				<label>Address</label>
+				<input type="text" name="address" id="address" />
+				
+				<label>City/State/Zip</label>
+				<input type="text" name="city-state-zip" id="city-state-zip" />
+				
+				<div class="clearfix"></div>
+				<hr />
+				
+				<p>I am currently a member of the Organic Utopia cooperative:</p>
+				<input type="radio" name="member" value="yes">Yes<br />
+				<input type="radio" name="member" value="no">No<br />
+				<input type="radio" name="member" value="unsure">Unsure<br />
+				
+				<p>I'm interested in receiving information on:</p>
+				<input type="checkbox" name="info" value="sales">Sales
+				<input type="checkbox" name="info" value="events">Events
+				<input type="checkbox" name="info" value="charity">Charity Drives
+				
+				<p>I'm interested in volunteering for:</p>
+				<select name="volunteer">
+					<option value="events">Store Events</option>
+					<option value="planting">Planting Season</option>
+					<option value="anything">Anything</option>
+				</select>
+				
+				<p>Send us a picture of your garden!</p>
+				<input type="file" name="uploadField" />
+		
+				<div class="clearfix"></div>
+				<button type="submit">Submit</button>
+				
+			</form>
+		</div>
+		
+	</div>
+	
+	<div class="column right">
+		<h2>Events</h2>
+		
+		<h4>April 1, 2012</h4>
+		<p>April Fool's blowout sale. Lots of great deals on clothing, food, green accessories and more.</p>
+		
+		<h4>April 24, 2012</h4>
+		<p>Green exhibition day at Trader Moe's, Long Beach NY. OU will be hosting an exhibition day at Long Beach's Trader Moe's store on Long Beach road.</p>
+		
+		<h4>May 10, 2012</h4>
+		<p>Pre-Memorial Day Sale. Receive an additional 10-30% off of our already low daily prices.</p>
+		
+		<h4>May 28, 2012</h4>
+		<p>Big Memorial Day Sale - big savings on all of our products before our Fall inventory arrives!</p>
+	</div>
+	
+	<div class="clearfix"></div>
+</div>
+
+<footer>
+	<div class="wrap">
+		<p>Organic Utopia is an equal opportunity employer.</p>
+		<p>All products organic unless otherwise labeled.</p>
+		
+		<div id="credits">
+			&copy; Copyright 2012 Tanner Hodges
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>
