@@ -441,53 +441,74 @@ footer {
    ==================================================================== */
 
 .Accordion {
-	border-left: solid 1px gray;
-	border-right: solid 1px black;
-	border-bottom: solid 1px gray;
 	overflow: hidden;
+	@include border-radius($pad);
+	@include box-shadow(
+		rgba($secondary,0.75) 0 3px 1px 0,
+		rgba(#888,0.2) 0 10px $pad/2 0
+		);
+
+	.AccordionPanel {
+		margin: 0px; padding: 0px;
+		
+		&:first-child .AccordionPanelTab {
+			@include border-radius($pad $pad 0 0);
+/*			border-top: 0 none transparent; */
+		}
+		&:last-child .AccordionPanelTab { @include border-radius(0 0 $pad $pad); }
+		
+		/* Fix the last tab when it's open */
+		&:last-child {
+			.AccordionPanelContent { @include border-radius(0 0 $pad $pad); }
+			&.AccordionPanelOpen .AccordionPanelTab { @include border-radius(0); }
+		}
+	}
+	
+	/* Header title for each panel */
+	.AccordionPanelTab {
+		@include font-headline;
+		font-size: 1.2em;
+		text-align: left;
+		padding: $pad/2;
+		border-bottom: 1px solid $secondary;
+		background-color: lighten($secondary,10);
+		@include box-shadow(rgba(#000,0.5) 0 0 2px);
+		
+		color: #ffffff;
+		text-shadow: 0 1px 1px rgba(#000,0.5);
+		cursor: pointer;
+		-moz-user-select: none;
+		-khtml-user-select: none;
+	}
+	
+	.AccordionPanelContent {
+		/* Inset Shadow */
+		@include box-shadow(rgba(#888,0.2) 0 0 $pad 1px inset);
+		
+		overflow: auto;
+		margin: 0px;
+		height: 200px;
+		
+		ul {
+			padding: $pad/2;
+			list-style: disc inside;
+			li {
+				padding-left: $pad/2;
+			}
+		}
+	}
+	
+	/* Header title hover */
+	.AccordionPanelTabHover {
+		color: darken($secondary,20);
+		text-shadow: 0 1px 1px rgba(#fff,0.5);
+	}
 }
 
-.AccordionPanel {
-	margin: 0px;
-	padding: 0px;
-}
 
-.AccordionPanelTab {
-	background-color: #CCCCCC;
-	border-top: solid 1px black;
-	border-bottom: solid 1px gray;
-	margin: 0px;
-	padding: 2px;
-	cursor: pointer;
-	-moz-user-select: none;
-	-khtml-user-select: none;
-}
-
-.AccordionPanelContent {
-	overflow: auto;
-	margin: 0px;
-	padding: 0px;
-	height: 200px;
-}
-
-.AccordionPanelOpen .AccordionPanelTab {
-	background-color: #EEEEEE;
-}
-
-.AccordionPanelTabHover {
-	color: #555555;
-}
-.AccordionPanelOpen .AccordionPanelTabHover {
-	color: #555555;
-}
-
-.AccordionFocused .AccordionPanelTab {
-	background-color: #3399FF;
-}
-
-.AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
-	background-color: #33CCFF;
-}
+.AccordionPanelOpen .AccordionPanelTabHover {}
+.AccordionFocused .AccordionPanelTab {}
+.AccordionFocused .AccordionPanelOpen .AccordionPanelTab {}
 
 
 /* ====================================================================

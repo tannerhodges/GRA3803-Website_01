@@ -438,74 +438,110 @@ footer #credits {
    ==================================================================== */
 /* line 443, ../scss/style.scss */
 .Accordion {
-  border-left: solid 1px gray;
-  border-right: solid 1px black;
-  border-bottom: solid 1px gray;
   overflow: hidden;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(82, 160, 95, 0.75) 0 3px 1px 0, rgba(136, 136, 136, 0.2) 0 10px 10px 0;
+  -moz-box-shadow: rgba(82, 160, 95, 0.75) 0 3px 1px 0, rgba(136, 136, 136, 0.2) 0 10px 10px 0;
+  box-shadow: rgba(82, 160, 95, 0.75) 0 3px 1px 0, rgba(136, 136, 136, 0.2) 0 10px 10px 0;
+  /* Header title for each panel */
+  /* Header title hover */
 }
-
-/* line 450, ../scss/style.scss */
-.AccordionPanel {
+/* line 451, ../scss/style.scss */
+.Accordion .AccordionPanel {
   margin: 0px;
   padding: 0px;
+  /* Fix the last tab when it's open */
 }
-
-/* line 455, ../scss/style.scss */
-.AccordionPanelTab {
-  background-color: #CCCCCC;
-  border-top: solid 1px black;
-  border-bottom: solid 1px gray;
-  margin: 0px;
-  padding: 2px;
+/* line 454, ../scss/style.scss */
+.Accordion .AccordionPanel:first-child .AccordionPanelTab {
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  -ms-border-radius: 20px 20px 0 0;
+  -o-border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
+  /*			border-top: 0 none transparent; */
+}
+/* line 458, ../scss/style.scss */
+.Accordion .AccordionPanel:last-child .AccordionPanelTab {
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -ms-border-radius: 0 0 20px 20px;
+  -o-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 20px 20px;
+}
+/* line 462, ../scss/style.scss */
+.Accordion .AccordionPanel:last-child .AccordionPanelContent {
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -ms-border-radius: 0 0 20px 20px;
+  -o-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 20px 20px;
+}
+/* line 463, ../scss/style.scss */
+.Accordion .AccordionPanel:last-child.AccordionPanelOpen .AccordionPanelTab {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+/* line 468, ../scss/style.scss */
+.Accordion .AccordionPanelTab {
+  font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
+  font-size: 1.2em;
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #52a05f;
+  background-color: #70b57b;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 2px;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   -moz-user-select: none;
   -khtml-user-select: none;
 }
-
-/* line 466, ../scss/style.scss */
-.AccordionPanelContent {
+/* line 484, ../scss/style.scss */
+.Accordion .AccordionPanelContent {
+  /* Inset Shadow */
+  -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px inset;
+  -moz-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px inset;
+  box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px inset;
   overflow: auto;
   margin: 0px;
-  padding: 0px;
   height: 200px;
 }
-
-/* line 473, ../scss/style.scss */
-.AccordionPanelOpen .AccordionPanelTab {
-  background-color: #EEEEEE;
+/* line 492, ../scss/style.scss */
+.Accordion .AccordionPanelContent ul {
+  padding: 10px;
+  list-style: disc inside;
 }
-
-/* line 477, ../scss/style.scss */
-.AccordionPanelTabHover {
-  color: #555555;
+/* line 495, ../scss/style.scss */
+.Accordion .AccordionPanelContent ul li {
+  padding-left: 10px;
 }
-
-/* line 480, ../scss/style.scss */
-.AccordionPanelOpen .AccordionPanelTabHover {
-  color: #555555;
-}
-
-/* line 484, ../scss/style.scss */
-.AccordionFocused .AccordionPanelTab {
-  background-color: #3399FF;
-}
-
-/* line 488, ../scss/style.scss */
-.AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
-  background-color: #33CCFF;
+/* line 502, ../scss/style.scss */
+.Accordion .AccordionPanelTabHover {
+  color: #2f5d37;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 /* ====================================================================
 	TABLE STYLES
    ==================================================================== */
-/* line 497, ../scss/style.scss */
+/* line 518, ../scss/style.scss */
 table {
   width: 448.42719px;
   border-collapse: separate;
   /* Cells */
   /* Border Radius */
 }
-/* line 503, ../scss/style.scss */
+/* line 524, ../scss/style.scss */
 table td, table th {
   -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
   -moz-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
@@ -514,20 +550,20 @@ table td, table th {
   padding: 10px;
   vertical-align: middle;
 }
-/* line 506, ../scss/style.scss */
+/* line 527, ../scss/style.scss */
 table td:first-child, table th:first-child {
   padding-left: 3%;
   width: 33%;
 }
-/* line 507, ../scss/style.scss */
+/* line 528, ../scss/style.scss */
 table td:nth-child(2), table th:nth-child(2) {
   width: 33%;
 }
-/* line 508, ../scss/style.scss */
+/* line 529, ../scss/style.scss */
 table td:nth-child(3), table th:nth-child(3) {
   width: 30%;
 }
-/* line 513, ../scss/style.scss */
+/* line 534, ../scss/style.scss */
 table th {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   font-size: 1.2em;
@@ -538,15 +574,15 @@ table th {
   color: #ffffff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
-/* line 523, ../scss/style.scss */
+/* line 544, ../scss/style.scss */
 table tr.alt td {
   background-color: #d5e9d8;
 }
-/* line 530, ../scss/style.scss */
+/* line 551, ../scss/style.scss */
 table tr:first-child th {
   /* &:last-child { @include border-radius(0 $pad 0 0); } */
 }
-/* line 531, ../scss/style.scss */
+/* line 552, ../scss/style.scss */
 table tr:first-child th:first-child {
   -webkit-border-radius: 20px 0 0 0;
   -moz-border-radius: 20px 0 0 0;
@@ -554,7 +590,7 @@ table tr:first-child th:first-child {
   -o-border-radius: 20px 0 0 0;
   border-radius: 20px 0 0 0;
 }
-/* line 536, ../scss/style.scss */
+/* line 557, ../scss/style.scss */
 table tr:last-child td {
   border-bottom: 3px solid #417e4b;
   -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px;
@@ -562,7 +598,7 @@ table tr:last-child td {
   box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px;
   /* &:first-child { @include border-radius(0 0 0 $pad); } */
 }
-/* line 541, ../scss/style.scss */
+/* line 562, ../scss/style.scss */
 table tr:last-child td:last-child {
   -webkit-border-radius: 0 0 20px 0;
   -moz-border-radius: 0 0 20px 0;
