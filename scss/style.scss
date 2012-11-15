@@ -206,6 +206,10 @@ body {
 	font-size: 16px;
 	line-height: 22px;
 	color: #333;
+
+	/* Fix rendering issues with Chrome (at least) */
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
 }
 
 a {

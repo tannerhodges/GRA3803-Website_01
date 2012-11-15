@@ -1,0 +1,24 @@
+This is the entire node:
+
+<embed width="100%" id="video-player-flash" height="100%" tabindex="0" type="application/x-shockwave-flash" src="http://s.ytimg.com/yts/swfbin/watch_as3-vflBXi91f.swf" allowscriptaccess="always" allowfullscreen="true" bgcolor="#000000" flashvars="el=embedded&amp;fexp=906367%2C929203%2C916613%2C922401%2C920704%2C912806%2C927201%2C925706%2C922403%2C925003%2C913546%2C913556%2C916805%2C920201%2C901451&amp;is_html5_mobile_device=false&amp;length_seconds=51&amp;allow_embed=1&amp;allow_ratings=1&amp;hl=en_US&amp;cr=US&amp;eurl=http%3A%2F%2Fsulley.cah.ucf.edu%2F~au613151%2FGRA3803%2FWebsite_01%2Findex.html&amp;iurl=http%3A%2F%2Fi2.ytimg.com%2Fvi%2FmzWZwYaD51o%2Fhqdefault.jpg&amp;view_count=29542&amp;title=Flavor%20Your%20Way%3A%20McCormick%20Thanksgiving%20Turkey&amp;avg_rating=3.57142857143&amp;video_id=mzWZwYaD51o&amp;sw=1.0&amp;iurlmaxres=http%3A%2F%2Fi2.ytimg.com%2Fvi%2FmzWZwYaD51o%2Fmaxresdefault.jpg&amp;enablejsapi=1&amp;sk=g4ZOCdBdRVDghTcM3WTTohDqC4aZLuXSC&amp;advideo=1&amp;rel=1&amp;playlist_module=http%3A%2F%2Fs.ytimg.com%2Fyts%2Fswfbin%2Fplaylist_module-vflVex-DH.swf&amp;iurlsd=http%3A%2F%2Fi2.ytimg.com%2Fvi%2FmzWZwYaD51o%2Fsddefault.jpg&amp;jsapicallback=ytPlayerOnYouTubePlayerReady&amp;playerapiid=player1&amp;framer=http%3A%2F%2Fsulley.cah.ucf.edu%2F~au613151%2FGRA3803%2FWebsite_01%2Findex.html">
+
+
+**
+
+
+If you shrink it down to just this, the header text is still shrunk:
+
+<embed src="http://s.ytimg.com/yts/swfbin/watch_as3-vflBXi91f.swf">
+
+
+**
+
+
+I think it has something to do with "font-size" in the CSS… If you delete all the attributes, leave only <embed>, then backtrack (undo), the text shrinks again as soon as font-size kicks back in. Hm…
+
+
+**
+
+
+Found the answer here: http://stackoverflow.com/questions/9516319/embedding-youtube-video-changes-font-look-on-elements-outside-the-iframe
+
