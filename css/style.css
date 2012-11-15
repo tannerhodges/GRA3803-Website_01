@@ -264,7 +264,17 @@ h2 {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7), 0 1px 2px rgba(136, 136, 136, 0.2);
 }
 
-/* line 291, ../scss/style.scss */
+/* Feature Video */
+/* line 292, ../scss/style.scss */
+#featureVideo {
+  -webkit-box-shadow: rgba(136, 136, 136, 0.3) 0 0 20px 1px;
+  -moz-box-shadow: rgba(136, 136, 136, 0.3) 0 0 20px 1px;
+  box-shadow: rgba(136, 136, 136, 0.3) 0 0 20px 1px;
+  border-bottom: 3px solid #bfc2b3;
+  margin-bottom: 1em;
+}
+
+/* line 298, ../scss/style.scss */
 footer {
   padding-top: 20px;
   border-top: 3px solid #91c79a;
@@ -280,7 +290,7 @@ footer {
   font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
   font-size: 0.75em;
 }
-/* line 302, ../scss/style.scss */
+/* line 309, ../scss/style.scss */
 footer #credits {
   color: rgba(0, 0, 0, 0.5);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7), 0 1px 2px rgba(136, 136, 136, 0.2);
@@ -289,12 +299,12 @@ footer #credits {
 /* ====================================================================
 	SIDEBAR 
    ==================================================================== */
-/* line 316, ../scss/style.scss */
+/* line 323, ../scss/style.scss */
 .column.left p {
   margin-bottom: 1.5em;
 }
 
-/* line 321, ../scss/style.scss */
+/* line 328, ../scss/style.scss */
 .column.right {
   font-size: 0.8em;
   position: relative;
@@ -316,14 +326,14 @@ footer #credits {
   -webkit-box-shadow: rgba(136, 136, 136, 0.1) 0 2px 2px 1px, rgba(136, 136, 136, 0.2) 0 0 10px 1px inset, rgba(136, 136, 136, 0.1) 0 0 20px 1px;
   -moz-box-shadow: rgba(136, 136, 136, 0.1) 0 2px 2px 1px, rgba(136, 136, 136, 0.2) 0 0 10px 1px inset, rgba(136, 136, 136, 0.1) 0 0 20px 1px;
   box-shadow: rgba(136, 136, 136, 0.1) 0 2px 2px 1px, rgba(136, 136, 136, 0.2) 0 0 10px 1px inset, rgba(136, 136, 136, 0.1) 0 0 20px 1px;
-  border-bottom: 2px solid #a7ab97;
+  border-bottom: 3px solid #a7ab97;
 }
-/* line 337, ../scss/style.scss */
+/* line 344, ../scss/style.scss */
 .column.right h2 {
   border-bottom-color: #bfc2b3;
   margin-bottom: 1em;
 }
-/* line 339, ../scss/style.scss */
+/* line 346, ../scss/style.scss */
 .column.right h4 {
   position: relative;
   left: -10px;
@@ -350,7 +360,7 @@ footer #credits {
   box-shadow: inset -1px -1px 10px 1px rgba(136, 136, 136, 0.1);
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(136, 136, 136, 0.3);
 }
-/* line 364, ../scss/style.scss */
+/* line 371, ../scss/style.scss */
 .column.right p {
   margin-bottom: 1.5em;
 }
@@ -360,13 +370,13 @@ footer #credits {
    ==================================================================== */
 /* Found this form at http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html */
 /* ----------- My Form ----------- */
-/* line 377, ../scss/style.scss */
+/* line 384, ../scss/style.scss */
 .myform {
   margin: 10px 0;
   padding: 14px;
   width: 422.42719px;
 }
-/* line 382, ../scss/style.scss */
+/* line 389, ../scss/style.scss */
 .myform p, .myform h1, .myform form, .myform button {
   border: 0;
   margin: 0;
@@ -374,21 +384,21 @@ footer #credits {
 }
 
 /* ----------- stylized ----------- */
-/* line 387, ../scss/style.scss */
+/* line 394, ../scss/style.scss */
 #stylized {
   border: solid 2px #b7ddf2;
   background: #ebf4fb;
 }
-/* line 391, ../scss/style.scss */
+/* line 398, ../scss/style.scss */
 #stylized h3 {
   font-weight: bold;
   margin-bottom: 1em;
 }
-/* line 395, ../scss/style.scss */
+/* line 402, ../scss/style.scss */
 #stylized p {
   margin-bottom: 0.25em;
 }
-/* line 398, ../scss/style.scss */
+/* line 405, ../scss/style.scss */
 #stylized label {
   display: block;
   clear: both;
@@ -398,7 +408,7 @@ footer #credits {
   width: 140px;
   line-height: 25px;
 }
-/* line 407, ../scss/style.scss */
+/* line 414, ../scss/style.scss */
 #stylized input[type='text'] {
   float: left;
   margin: 2px 0 20px 10px;
@@ -408,7 +418,7 @@ footer #credits {
   height: 13px;
   font-size: 12px;
 }
-/* line 416, ../scss/style.scss */
+/* line 423, ../scss/style.scss */
 #stylized button {
   clear: both;
   display: block;
@@ -426,7 +436,7 @@ footer #credits {
 /* ====================================================================
 	SPRY STYLES 
    ==================================================================== */
-/* line 436, ../scss/style.scss */
+/* line 443, ../scss/style.scss */
 .Accordion {
   border-left: solid 1px gray;
   border-right: solid 1px black;
@@ -434,13 +444,13 @@ footer #credits {
   overflow: hidden;
 }
 
-/* line 443, ../scss/style.scss */
+/* line 450, ../scss/style.scss */
 .AccordionPanel {
   margin: 0px;
   padding: 0px;
 }
 
-/* line 448, ../scss/style.scss */
+/* line 455, ../scss/style.scss */
 .AccordionPanelTab {
   background-color: #CCCCCC;
   border-top: solid 1px black;
@@ -452,7 +462,7 @@ footer #credits {
   -khtml-user-select: none;
 }
 
-/* line 459, ../scss/style.scss */
+/* line 466, ../scss/style.scss */
 .AccordionPanelContent {
   overflow: auto;
   margin: 0px;
@@ -460,27 +470,103 @@ footer #credits {
   height: 200px;
 }
 
-/* line 466, ../scss/style.scss */
+/* line 473, ../scss/style.scss */
 .AccordionPanelOpen .AccordionPanelTab {
   background-color: #EEEEEE;
 }
 
-/* line 470, ../scss/style.scss */
+/* line 477, ../scss/style.scss */
 .AccordionPanelTabHover {
   color: #555555;
 }
 
-/* line 473, ../scss/style.scss */
+/* line 480, ../scss/style.scss */
 .AccordionPanelOpen .AccordionPanelTabHover {
   color: #555555;
 }
 
-/* line 477, ../scss/style.scss */
+/* line 484, ../scss/style.scss */
 .AccordionFocused .AccordionPanelTab {
   background-color: #3399FF;
 }
 
-/* line 481, ../scss/style.scss */
+/* line 488, ../scss/style.scss */
 .AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
   background-color: #33CCFF;
+}
+
+/* ====================================================================
+	TABLE STYLES
+   ==================================================================== */
+/* line 497, ../scss/style.scss */
+table {
+  width: 448.42719px;
+  border-collapse: separate;
+  /* Cells */
+  /* Border Radius */
+}
+/* line 503, ../scss/style.scss */
+table td, table th {
+  -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
+  -moz-box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
+  box-shadow: rgba(136, 136, 136, 0.2) 0 0 10px 1px inset;
+  border: 1px solid #52a05f;
+  padding: 10px;
+  vertical-align: middle;
+}
+/* line 506, ../scss/style.scss */
+table td:first-child, table th:first-child {
+  padding-left: 3%;
+  width: 33%;
+}
+/* line 507, ../scss/style.scss */
+table td:nth-child(2), table th:nth-child(2) {
+  width: 33%;
+}
+/* line 508, ../scss/style.scss */
+table td:nth-child(3), table th:nth-child(3) {
+  width: 30%;
+}
+/* line 513, ../scss/style.scss */
+table th {
+  font-family: "_.regular", "Verdana", "Gill Sans", "Lucida Grande", "Arial", "Helvetica", sans-serif;
+  font-size: 1.2em;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-color: #70b57b;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+/* line 523, ../scss/style.scss */
+table tr.alt td {
+  background-color: #d5e9d8;
+}
+/* line 530, ../scss/style.scss */
+table tr:first-child th {
+  /* &:last-child { @include border-radius(0 $pad 0 0); } */
+}
+/* line 531, ../scss/style.scss */
+table tr:first-child th:first-child {
+  -webkit-border-radius: 20px 0 0 0;
+  -moz-border-radius: 20px 0 0 0;
+  -ms-border-radius: 20px 0 0 0;
+  -o-border-radius: 20px 0 0 0;
+  border-radius: 20px 0 0 0;
+}
+/* line 536, ../scss/style.scss */
+table tr:last-child td {
+  border-bottom: 3px solid #417e4b;
+  -webkit-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px;
+  -moz-box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px;
+  box-shadow: rgba(136, 136, 136, 0.2) 0 0 20px 1px;
+  /* &:first-child { @include border-radius(0 0 0 $pad); } */
+}
+/* line 541, ../scss/style.scss */
+table tr:last-child td:last-child {
+  -webkit-border-radius: 0 0 20px 0;
+  -moz-border-radius: 0 0 20px 0;
+  -ms-border-radius: 0 0 20px 0;
+  -o-border-radius: 0 0 20px 0;
+  border-radius: 0 0 20px 0;
 }
