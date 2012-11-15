@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, h6 { @include font-headline; }
 	background-color: #fff;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
-	@include single-box-shadow(rgba(#888,0.3), 0,0,$pad,1px);
+	@include box-shadow(rgba(#888,0.3) 0 0 $pad 1px);
 	z-index: 0;
 }
 #content, footer { z-index: 10; }
@@ -298,7 +298,7 @@ h2 {
 footer {
 	padding-top: $pad;
 	border-top: 3px solid lighten($secondary,20); 
-	@include single-box-shadow(rgba(#888,0.3),0,0,$pad,1px);
+	@include box-shadow(rgba(#888,0.3) 0 0 $pad 1px);
 
 /*	@include gradient(rgba(lighten($secondary, 10),0.55), rgba($secondary,0.95)); */
 	@include background-image(radial-gradient(color-stops(rgba(lighten($secondary, 10),0.65), rgba($secondary,0.95)), top center));
@@ -361,7 +361,7 @@ footer {
 		@include filter-gradient(rgba(lighten($tertiary,30),0.5), rgba(lighten($tertiary,30),0.0), horizontal);
 		@include background-image(linear-gradient(left,  rgba(lighten($tertiary,30),0.5) 0%, rgba(lighten($tertiary,30),0.0) 100%));
 
-		@include single-box-shadow(rgba(#888,0.1), -1px,-1px,10px,1px,inset);
+		@include box-shadow(rgba(#888,0.1) -1px -1px 10px 1px inset);
 
 		text-shadow:
 			0 1px 1px rgba(#fff,0.3),
@@ -379,59 +379,89 @@ footer {
    ==================================================================== */
 
 /* Found this form at http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html */
-/* ----------- My Form ----------- */
 
-.myform {
-	margin: 10px 0;
-	padding: 14px;
-	width: $left-col - (14px * 2) - 4px;
-	
-	p, h1, form, button{border:0; margin:0; padding:0;}
-}
+#form {
+	width: $left-col - 4px;
 
-
-/* ----------- stylized ----------- */
-#stylized{
-	border: solid 2px #b7ddf2;
-	background: #ebf4fb;
+	background: lighten($secondary,40);
+	border: solid 1px $secondary;
+	@include border-radius($pad 0 $pad $pad);
+	@include box-shadow(rgba(darken($secondary,10),1.0) 0 3px 1px 0);
 	
 	h3 {
-		font-weight: bold;
-		margin-bottom: 1em;
+		&:first-child { @include border-radius(($pad - 1px) 0 0 0); }
+		
+		padding: 0.5em;
+		margin-bottom: $pad/2;
+
+		@include font-headline;
+		font-size: 1.2em;
+		color: #ffffff;
+		text-shadow: 0 1px 1px rgba(#000,0.5);
+
+		background-color: lighten($secondary,10);
+		@include box-shadow(rgba(#888,0.2) 0 0 $pad/2 1px inset);
 	}
-	p{
-		margin-bottom: 0.25em;
+	p {
+		/* Quick reset */
+		margin: 0; border: 0; padding: 0;
+		
+		/* Style */
+		padding: 1em $pad/2 0.25em $pad/2;
 	}
-	label{
+	label {
 		display: block;
 		clear: both;
 		float: left;
-		font-weight: bold;
-		text-align: right;
 		width: 140px;
-		line-height: 25px;
+		
+		font-weight: bold;
+		line-height: 32px;
+		text-align: right;
 	}
-	input[type='text']{
+	input, select {
+		clear: both;
 		float: left;
-		margin: 2px 0 20px 10px;
-		border: solid 1px #aacfe4;
-		padding: 4px 2px;
-		width: 200px;
-		height: 13px;
-		font-size: 12px;
+		margin-left: $pad/2;
+		
+		&[type='text'] {
+			@include font-headline;
+			clear: none;
+			float: left;
+			margin: 1px 0 0.25em 0.5em;
+			padding: 2px 10px;
+			border: solid 1px #aaa;
+			@include border-radius(6px 0 6px 6px);
+			@include box-shadow(rgba(#888,0.2) 0 0 5px 1px inset);
+			
+			width: 200px;
+			height: 1.5em;
+			font-size: 1em;
+		}
 	}
-	button{
+	button {
+		cursor: pointer;
 		clear: both;
 		display: block;
-		margin: 1em auto;
-		width: 125px;
-		height: 31px;
-		background-color: #666666;
+		margin: 1em auto 2em auto;
+		padding: 0.25em;
+		width: 33%;
+		font-size: 1em;
+		line-height: 2em;
 		text-align: center;
-		line-height: 31px;
-		color: #FFFFFF;
-		font-size: 11px;
-		font-weight: bold;
+		
+		border: 2px solid $secondary;
+		@include border-radius($pad/2);
+		@include box-shadow(
+			rgba(#888,0.2) 0 0 5px 1px inset,
+			rgba(#000,0.1) 0 3px 5px 1px
+			);
+		
+		background-color: lighten($secondary,10);
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(#000,0.75);
+		
+		&:hover { background-color: lighten($secondary,20); }
 	}
 }
 
@@ -441,25 +471,25 @@ footer {
    ==================================================================== */
 
 .Accordion {
+	width: $left-col - 4px;
+	border: solid 1px $secondary;
+
 	overflow: hidden;
-	@include border-radius($pad);
-	@include box-shadow(
-		rgba($secondary,0.75) 0 3px 1px 0,
-		rgba(#888,0.2) 0 10px $pad/2 0
-		);
+	@include border-radius($pad 0 $pad $pad);
+	@include box-shadow(rgba(darken($secondary,10),1.0) 0 3px 1px 0);
 
 	.AccordionPanel {
 		margin: 0px; padding: 0px;
 		
 		&:first-child .AccordionPanelTab {
-			@include border-radius($pad $pad 0 0);
+			@include border-radius(($pad - 1px) 0 0 0);
 /*			border-top: 0 none transparent; */
 		}
-		&:last-child .AccordionPanelTab { @include border-radius(0 0 $pad $pad); }
+		&:last-child .AccordionPanelTab { @include border-radius(0 0 ($pad - 1px) ($pad - 1px)); }
 		
 		/* Fix the last tab when it's open */
 		&:last-child {
-			.AccordionPanelContent { @include border-radius(0 0 $pad $pad); }
+			.AccordionPanelContent { @include border-radius(0 0 ($pad - 1px) ($pad - 1px)); }
 			&.AccordionPanelOpen .AccordionPanelTab { @include border-radius(0); }
 		}
 	}
@@ -472,7 +502,9 @@ footer {
 		padding: $pad/2;
 		border-bottom: 1px solid $secondary;
 		background-color: lighten($secondary,10);
-		@include box-shadow(rgba(#000,0.5) 0 0 2px);
+		@include box-shadow(
+			rgba(#000,0.5) 0 0 2px,
+			rgba(#888,0.2) 0 0 $pad/2 1px inset);
 		
 		color: #ffffff;
 		text-shadow: 0 1px 1px rgba(#000,0.5);
@@ -500,8 +532,9 @@ footer {
 	
 	/* Header title hover */
 	.AccordionPanelTabHover {
-		color: darken($secondary,20);
-		text-shadow: 0 1px 1px rgba(#fff,0.5);
+/*		color: darken($secondary,20);
+		text-shadow: 0 1px 1px rgba(#fff,0.5); */
+		background-color: lighten($secondary,20);
 	}
 }
 
@@ -555,8 +588,11 @@ table {
 		}
 		&:last-child { 
 			td {
-				border-bottom: 3px solid darken($secondary,10);
-				@include box-shadow(rgba(#888,0.2) 0 0 $pad 1px);
+/*				border-bottom: 3px solid $secondary; */
+				@include box-shadow(
+					rgba(#888,0.2) 0 0 $pad 1px,
+					rgba(darken($secondary,10),1.0) 0 3px 1px 0
+					);
 
 				/* &:first-child { @include border-radius(0 0 0 $pad); } */
 				&:last-child { @include border-radius(0 0 $pad 0); }

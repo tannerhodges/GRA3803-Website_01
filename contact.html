@@ -39,48 +39,45 @@
 		<h2>Tell Me More!</h2>
 		<p>To be added to our mailing list for news of sales and special events, please fill out the following information:</p>
 		
-		<div id="stylized" class="myform">
-			<form id="form" name="form" method="post" action="index.html">
-				<h3>Sign-up form</h3>
-				<p>This is the basic look of my form without table</p>
-				
-				<label>Name</label>
-				<input type="text" name="name" id="name" />
-				
-				<label>Address</label>
-				<input type="text" name="address" id="address" />
-				
-				<label>City/State/Zip</label>
-				<input type="text" name="city-state-zip" id="city-state-zip" />
-				
-				<div class="clearfix"></div>
-				<hr />
-				
-				<p>I am currently a member of the Organic Utopia cooperative:</p>
-				<input type="radio" name="member" value="yes">Yes<br />
-				<input type="radio" name="member" value="no">No<br />
-				<input type="radio" name="member" value="unsure">Unsure<br />
-				
-				<p>I'm interested in receiving information on:</p>
-				<input type="checkbox" name="info" value="sales">Sales
-				<input type="checkbox" name="info" value="events">Events
-				<input type="checkbox" name="info" value="charity">Charity Drives
-				
-				<p>I'm interested in volunteering for:</p>
-				<select name="volunteer">
-					<option value="events">Store Events</option>
-					<option value="planting">Planting Season</option>
-					<option value="anything">Anything</option>
-				</select>
-				
-				<p>Send us a picture of your garden!</p>
-				<input type="file" name="uploadField" />
-		
-				<div class="clearfix"></div>
-				<button type="submit">Submit</button>
-				
-			</form>
-		</div>
+		<form id="form" name="form" method="post" action="">
+			<h3>Sign-up form</h3>
+			
+			<label>Name</label>
+			<input type="text" name="name" id="name" />
+			<label>Address</label>
+			<input type="text" name="address" id="address" />
+			<label>City/State/Zip</label>
+			<input type="text" name="city-state-zip" id="city-state-zip" />
+			
+			<div class="clearfix"></div>
+			
+			<p>I am currently a member of the Organic Utopia cooperative:</p>
+			<input type="radio" name="member" value="yes">Yes<br />
+			<input type="radio" name="member" value="no">No<br />
+			<input type="radio" name="member" value="unsure">Unsure<br />
+			
+			<p>I'm interested in receiving information on:</p>
+			<input type="checkbox" name="info" value="sales">Sales<br />
+			<input type="checkbox" name="info" value="events">Events<br />
+			<input type="checkbox" name="info" value="charity">Charity Drives<br />
+			
+			<p>I'm interested in volunteering for:</p>
+			<select name="volunteer">
+				<option value="events">Store Events</option>
+				<option value="planting">Planting Season</option>
+				<option value="anything">Anything</option>
+			</select>
+			
+			<div class="clearfix"></div>
+
+			<p>Send us a picture of your garden!</p>
+			<input type="file" name="uploadField" />
+	
+			<div class="clearfix"></div>
+			
+			<button type="submit">Submit</button>
+			
+		</form>
 		
 	</div>
 	
